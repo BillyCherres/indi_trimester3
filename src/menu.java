@@ -1,22 +1,27 @@
-import java.sql.SQLOutput;
 import java.util.Dictionary;
+import java.util.Scanner;
 
 public class menu {
 
-    //initializing variables
-    private Dictionary elements;
+    //Initialize variables
+    private Dictionary<Integer, funcMaster> elements;
+    Scanner input = new Scanner(System.in);
 
-    //constructor
-    public menu(Dictionary elements) {
+    //Constructor
+    public menu(Dictionary<Integer, funcMaster> elements) {
+        //Takes dictionary as input
         this.elements = elements;
-
     }
 
-    // we are iterating through the forloop to print everything in the dictionary
+    //Iterate over dictionary and print all values
     public void print() {
-        //setting the variable i to 1... while i is less then the size of the dictionary, then you add 1 to i
-        for (int i = 1; i <= this.elements.size(); i++) {
-            System.out.println(elements.get(i));
+        for(int i = 1; i <= this.elements.size(); i++) {
+            System.out.print(i + " ");
+            System.out.println(elements.get(i).getSelection());
         }
+    }
+
+    public void run(int x) {
+        this.elements.get(x).run();
     }
 }
