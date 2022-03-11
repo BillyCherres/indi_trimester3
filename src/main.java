@@ -1,6 +1,7 @@
 //imports
 import java.util.*;
 
+
 public class main {
 
     public static void main(String[] args) {
@@ -17,7 +18,7 @@ public class main {
         Dictionary<Integer, funcMaster> myElements = new Hashtable<Integer, funcMaster>(); {
             myElements.put(1, mySwapper);
         }
-        
+
         //Create menu class object
         menu myMenu = new menu(myElements);
 
