@@ -1,33 +1,44 @@
-import java.util.Dictionary;
-import java.util.Hashtable;
-import java.util.Scanner;
+//imports
+import java.util.*;
 
 public class main {
-    public static void main(String[] args) {
-       //initialize scanner (enabling user input)
 
+    public static void main(String[] args) {
+        //Initialize scanner (user input)
         Scanner input = new Scanner(System.in);
 
-        // create menu options dictionary
-            Dictionary<Integer, String> MyElements = new Hashtable<Integer, String>();
-            {
-                MyElements.put(1, "test1");
-                MyElements.put(2, "test2");
+        //Create swapper class
+        ArrayList<Integer> nums = new ArrayList<Integer>();
+        nums.add(1);
+        nums.add(-1);
+        swapper mySwapper = new swapper("Week 0: Swapper", nums);
 
-                //Creating menu class object
-                menu myMenu = new menu(MyElements);
+        //Create menu options dictionary
+        Dictionary<Integer, funcMaster> myElements = new Hashtable<Integer, funcMaster>(); {
+            myElements.put(1, mySwapper);
+        }
+        
+        //Create menu class object
+        menu myMenu = new menu(myElements);
 
-                System.out.println("Enter item number from the following list: ");
-                myMenu.print();
+        Boolean running = true;
+        while(running == true){
+            //Print insturctions
+            System.out.println("Enter Item Number From Following List: ");
+            myMenu.print ();
+
+            //Read user input
+            int choice = input.nextInt();
+
+            //Try choice
+            try {
+                //Run selection
+                myMenu.run(choice);
             }
-
-            // read user input
-            Integer choice = input.nextInt();
-            System.out.println(choice);
+            //Return valid values
+            catch(Exception e) {
+                System.out.println("Enter a valid number");
+            }
         }
     }
-
-
-
-// https://www.tutorialcup.com/java/dictionary-in-java.htm
-
+}
