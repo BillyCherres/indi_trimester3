@@ -1,7 +1,6 @@
 //imports
 import java.util.*;
 
-
 public class main {
 
     public static void main(String[] args) {
@@ -14,11 +13,15 @@ public class main {
         nums.add(-1);
         swapper mySwapper = new swapper("Week 0: Swapper", nums);
 
+        //Create matrix class
+        matrix myMatrix = new matrix("Week 0: Matrix");
+
         //Create menu options dictionary
         Dictionary<Integer, funcMaster> myElements = new Hashtable<Integer, funcMaster>(); {
             myElements.put(1, mySwapper);
+            myElements.put(2, myMatrix);
         }
-
+        
         //Create menu class object
         menu myMenu = new menu(myElements);
 
@@ -26,7 +29,7 @@ public class main {
         while(running == true){
             //Print insturctions
             System.out.println("Enter Item Number From Following List: ");
-            myMenu.print ();
+            myMenu.print();
 
             //Read user input
             int choice = input.nextInt();
