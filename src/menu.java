@@ -14,6 +14,8 @@ public class menu {
     }
 
     //Iterate over dictionary and print all values
+    // when int is less then the size of the dictionary, i adds 1
+    // this prints the parts of the dictionary
     public void print() {
         for(int i = 1; i <= this.elements.size(); i++) {
             System.out.print(i + " ");
